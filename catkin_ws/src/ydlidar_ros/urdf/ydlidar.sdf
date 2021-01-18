@@ -1,7 +1,5 @@
-<robot
-  name="ydlidar_ros">
-  <link
-    name="base_laser">
+<model name="ydlidar_ros">
+  <link name="base_laser">
     <inertial>
       <origin
         xyz="-0.00029774 0.0066667 0.00013047"
@@ -61,36 +59,43 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://ydlidar_ros/meshes/ydlidar.dae" />
+        <mesh>
+          <filename>package://ydlidar_ros/meshes/ydlidar.dae</filename>
+	
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.64706 0.61961 0.58824 1" />
+      <material name="">
+        <color>
+          <rgba> 0.64706 0.61961 0.58824 1 </rgba>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin>
+        <xyz>0 0 0</xyz>
+        <rpy>0 0 0</rpy>
+      </origin>
       <geometry>
         <mesh
           filename="package://ydlidar_ros/meshes/ydlidar.dae" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="laser_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0.03172"
-      rpy="0 0 0" />
-    <parent
-      link="base_laser" />
-    <child
-      link="laser_frame" />
-    <axis
-      xyz="0 0 0" />
+  <joint>
+    <name>laser_joint</name
+    <type>revolute</type>
+    <origin>
+      <xyz>0 0 0.03172</xyz>
+      <rpy>0 0 0 </rpy>
+    <parent>
+      <link>base_laser</link>
+    </parent
+    <child>
+      <link> laser_frame </link> 
+    </child>
+    <axis>
+      <xyz> 0 0 1 </xyz>
+    </axis>	
+    <limit> 
+      <lower> -10000000000 </lower> 
+      <upper> 10000000000 </upper>
   </joint>
-</robot>
+</model>
