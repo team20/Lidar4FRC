@@ -10,6 +10,6 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y ros-noetic-ros-base ros-noetic-amcl
 RUN apt-get install -y git
 
-RUN git clone https://github.com/23watejona/rosvision.git
+ADD ./shell /home
 
 ENTRYPOINT /bin/bash
