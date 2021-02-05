@@ -1,7 +1,6 @@
 echo "Setting up ros"
-source $ROS_HOME/setup.sh
+source /opt/ros/noetic/setup.sh
 catkin_make
 echo "Setting up catkin workspace"
-source $CATKIN_WS_HOME/devel/setup.bash
+source ./devel/setup.bash
 roslaunch start run.launch
-#roslaunch ydlidar_ros gazebo.launch
