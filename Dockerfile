@@ -8,8 +8,13 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 RUN apt-get update
 RUN apt-get install -y apt-utils
 RUN apt-get install -y ros-noetic-ros-base ros-noetic-amcl
+RUN apt-get install -y ros-noetic-tf
 RUN apt-get install -y git
-
+RUN apt-get install -y g++
+RUN apt-get install -y python3-pip
+RUN apt-get install -y ros-noetic-map-server
+RUN pip3 install pynetworktables
+RUN ln -s /dev/ttyUSB0 /dev/ydlidar
 ADD ./shell /home
 
 ENTRYPOINT /bin/bash
