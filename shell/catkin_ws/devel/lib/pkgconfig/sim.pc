@@ -1,4 +1,4 @@
-prefix=/home/ros/rosvision/catkin_ws/devel
+prefix=/home/catkin_ws/devel
 
 Name: sim
 Description: Description of sim

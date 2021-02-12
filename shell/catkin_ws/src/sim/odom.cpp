@@ -35,7 +35,7 @@
        //y += delta_y;
        //th += delta_th;
 	//th+= 1.57;
-	x=0;
+	x+=0.01;
 	y=0;
 	th=0;
        printf("x: %f, y: %f, th: %f \n", x, y, th);   

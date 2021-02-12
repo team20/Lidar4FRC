@@ -2,14 +2,15 @@
 import rospy
 import networktables
 import math
-from sensor_msgs.msg import LaserScan
+from geometry_msgs.msg import PoseWithCovarianceStamped
 
 def callback(data):
-	rospy.loginfo("Range: %f, %f", data.angle_min*(180/math.pi), data.angle_max*(180/math.pi))
+	quat = data.pose.pose.orientation
+	rospy.loginfo("Position: x=%f y=%f z=%f th=%f", quat.x, quat.y, quat.z, quat.w)
 	
 def listener():
 	rospy.init_node('lidartoroborio', anonymous=True)
-	rospy.Subscriber('scan', LaserScan, callback)
+	rospy.Subscriber('amcl_pose', PoseWithCovarianceStamped, callback)
 	rospy.spin()
 
 if __name__ == "__main__":

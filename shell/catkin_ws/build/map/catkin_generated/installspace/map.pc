@@ -1,0 +1,8 @@
+prefix=/home/catkin_ws/install
+
+Name: map
+Description: Description of map
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
