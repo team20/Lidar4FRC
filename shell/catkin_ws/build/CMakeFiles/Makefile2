@@ -527,6 +527,24 @@ lidartoroborio/preinstall:
 .PHONY : lidartoroborio/preinstall
 
 #=============================================================================
+# Directory level rules for directory odom
+
+# Convenience name for "all" pass in the directory.
+odom/all:
+
+.PHONY : odom/all
+
+# Convenience name for "clean" pass in the directory.
+odom/clean:
+
+.PHONY : odom/clean
+
+# Convenience name for "preinstall" pass in the directory.
+odom/preinstall:
+
+.PHONY : odom/preinstall
+
+#=============================================================================
 # Directory level rules for directory test
 
 # Convenience name for "all" pass in the directory.

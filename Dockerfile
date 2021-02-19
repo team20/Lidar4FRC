@@ -12,9 +12,10 @@ RUN apt-get install -y ros-melodic-ros-base
 RUn apt-get install -y ros-melodic-amcl ros-melodic-tf ros-melodic-map-server ros-melodic-slam-gmapping
 RUN apt-get install -y git
 RUN apt-get install -y g++
-RUN apt-get install -y python3-pip
-RUN pip3 install pynetworktables
+RUN apt-get install -y python3-pip python-pip
+RUN pip install pynetworktables
 RUN pip3 install pyyaml
 RUN pip3 install rospkg 
+RUN pip3 install pynetworktables
 RUN apt-get install -y nano
-CMD . /opt/ros/melodic/setup.sh && cd /home/catkin_ws && ls && catkin_make && ln -s /dev/ttyUSB0 /dev/ydlidar && bash
+CMD . /opt/ros/melodic/setup.sh && cd /home/catkin_ws && ln -s /dev/ttyUSB0 /dev/ydlidar && ./setup.sh && bash

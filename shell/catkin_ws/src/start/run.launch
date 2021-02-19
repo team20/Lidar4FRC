@@ -4,7 +4,7 @@
     args="0.0 0.0 0.0 0.0 0.0 0.0 /base_link /laser_frame 40" />
   <!--node pkg="tf" type="static_transform_publisher" name="world_to_map"
     args="0.0 0.0 0.0 0.0 0.0 0.0 /base_link /world 40"/-->
-  <node name="odom" pkg="sim" type="odom"/>
+  <node name="odom" pkg="odom" type="odom.py" output="screen"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(find map)/map.yaml"/>
   <include file="$(find start)/amcl.launch"/>
   <node name="lidartoroborio" pkg="lidartoroborio" type="lidartoroborio.py" output="screen"/>
