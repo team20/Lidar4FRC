@@ -6,7 +6,8 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 from networktables import NetworkTables
 def callback(data):
 	quat = data.pose.pose.orientation
-	rospy.loginfo("Position: x=%f y=%f z=%f th=%f", quat.x, quat.y, quat.z, quat.w)
+	pos = data.pose.pose.position
+	rospy.loginfo("Position: x=%f y=%f z=%f th=%f", pos.x, pos.y, pos.z, quat.w)
 	x.setDouble(quat.x)
 	y.setDouble(quat.y)
 	z.setDouble(quat.z)

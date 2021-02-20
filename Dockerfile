@@ -18,4 +18,4 @@ RUN pip3 install pyyaml
 RUN pip3 install rospkg 
 RUN pip3 install pynetworktables
 RUN apt-get install -y nano
-CMD . /opt/ros/melodic/setup.sh && cd /home/catkin_ws && ln -s /dev/ttyUSB0 /dev/ydlidar && ./setup.sh && bash
+CMD . /opt/ros/melodic/setup.sh && cd /home/catkin_ws && ln -s /dev/ttyUSB0 /dev/ydlidar && ./setup.sh & bash

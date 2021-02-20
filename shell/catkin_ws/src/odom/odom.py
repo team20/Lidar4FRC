@@ -6,10 +6,11 @@ import tf
 from tf import TransformBroadcaster
 from nav_msgs.msg import Odometry
 from networktables import NetworkTables
+from networktables import NetworkTablesInstance
 from geometry_msgs.msg import Quaternion, TransformStamped
 def publisher():
 	rospy.init_node('odom', anonymous=True)
-	NetworkTables.initialize(server='10.2.2.2')
+	NetworkTables.initialize(server='10.0.20.2')
 	odom_table = NetworkTables.getTable('ODOMETRY')
 	odom_pub = rospy.Publisher('odom', Odometry, queue_size=1000)
 	r = rospy.Rate(100)
