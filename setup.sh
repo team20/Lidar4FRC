@@ -1,5 +1,5 @@
 if [ ! -f "./.ros_built" ] || [ "$1" = "-rebuild" ]; then
-	docker build -t ros . && touch .ros_built
+	docker build --no-cache -t ros . && touch .ros_built
 fi
 #docker build -t ros .
 docker stop ros_build

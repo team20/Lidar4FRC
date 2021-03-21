@@ -1,8 +1,0 @@
-prefix=/home/ros/rosvision/catkin_ws/devel
-
-Name: sim
-Description: Description of sim
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

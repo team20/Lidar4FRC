@@ -1,8 +1,0 @@
-prefix=/home/ros/rosvision/catkin_ws/devel
-
-Name: rvizfiles
-Description: Description of rvizfiles
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

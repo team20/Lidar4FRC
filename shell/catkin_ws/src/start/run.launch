@@ -8,5 +8,5 @@
   <node name="map_server" pkg="map_server" type="map_server" args="$(find map)/map.yaml"/>
   <include file="$(find start)/amcl.launch"/>
   <node name="lidartoroborio" pkg="lidartoroborio" type="lidartoroborio.py" output="screen"/>
-  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find ydlidar_ros)/launch/lidar.rviz"/-->
+  <node name="grid" pkg="grid" type="grid.py" output="screen"/>
 </launch>

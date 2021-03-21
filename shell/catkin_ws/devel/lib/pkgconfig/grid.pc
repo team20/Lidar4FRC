@@ -1,0 +1,8 @@
+prefix=/home/catkin_ws/devel
+
+Name: grid
+Description: Description of grid
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

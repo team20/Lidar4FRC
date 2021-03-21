@@ -509,6 +509,24 @@ start/preinstall:
 .PHONY : start/preinstall
 
 #=============================================================================
+# Directory level rules for directory grid
+
+# Convenience name for "all" pass in the directory.
+grid/all:
+
+.PHONY : grid/all
+
+# Convenience name for "clean" pass in the directory.
+grid/clean:
+
+.PHONY : grid/clean
+
+# Convenience name for "preinstall" pass in the directory.
+grid/preinstall:
+
+.PHONY : grid/preinstall
+
+#=============================================================================
 # Directory level rules for directory lidartoroborio
 
 # Convenience name for "all" pass in the directory.
