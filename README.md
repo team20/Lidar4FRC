@@ -9,5 +9,5 @@ is shell/catkin_ws/src/lidartoroborio/lidartoroborio.py, as that is where the da
 using network tables.\
 Also\
 shell/catkin_ws/src/grid/grid.py reads messages from the "scan" topic and uses them to build an occupancy grid.\
-While this may not be directly useful, it can serve as a guide for who to read from the scan topic and output to\
+While this may not be directly useful, it can serve as a guide for how to read from the scan topic and output to\
 a network table.
