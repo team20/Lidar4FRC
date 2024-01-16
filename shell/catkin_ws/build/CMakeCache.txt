@@ -257,6 +257,8 @@ Project_BINARY_DIR:STATIC=/home/catkin_ws/build
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/home/catkin_ws/src
 
+QT_QMAKE_EXECUTABLE:FILEPATH=NOTFOUND
+
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/arm-linux-gnueabihf/librt.so
 
@@ -292,6 +294,9 @@ actionlib_msgs_DIR:PATH=/opt/ros/melodic/share/actionlib_msgs/cmake
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
+
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/melodic/share/class_loader/cmake
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
@@ -372,6 +377,42 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+hector_geotiff_BINARY_DIR:STATIC=/home/catkin_ws/build/RPLidar_Hector_SLAM/hector_slam/hector_geotiff
+
+//Value Computed by CMake
+hector_geotiff_SOURCE_DIR:STATIC=/home/catkin_ws/src/RPLidar_Hector_SLAM/hector_slam/hector_geotiff
+
+//Value Computed by CMake
+hector_map_tools_BINARY_DIR:STATIC=/home/catkin_ws/build/RPLidar_Hector_SLAM/hector_slam/hector_map_tools
+
+//The directory containing a CMake configuration file for hector_map_tools.
+hector_map_tools_DIR:PATH=/home/catkin_ws/devel/share/hector_map_tools/cmake
+
+//Value Computed by CMake
+hector_map_tools_SOURCE_DIR:STATIC=/home/catkin_ws/src/RPLidar_Hector_SLAM/hector_slam/hector_map_tools
+
+//Value Computed by CMake
+hector_nav_msgs_BINARY_DIR:STATIC=/home/catkin_ws/build/RPLidar_Hector_SLAM/hector_slam/hector_nav_msgs
+
+//The directory containing a CMake configuration file for hector_nav_msgs.
+hector_nav_msgs_DIR:PATH=/home/catkin_ws/devel/share/hector_nav_msgs/cmake
+
+//Value Computed by CMake
+hector_nav_msgs_SOURCE_DIR:STATIC=/home/catkin_ws/src/RPLidar_Hector_SLAM/hector_slam/hector_nav_msgs
+
+//Value Computed by CMake
+hector_slam_BINARY_DIR:STATIC=/home/catkin_ws/build/RPLidar_Hector_SLAM/hector_slam/hector_slam
+
+//Value Computed by CMake
+hector_slam_SOURCE_DIR:STATIC=/home/catkin_ws/src/RPLidar_Hector_SLAM/hector_slam/hector_slam
+
+//Value Computed by CMake
+hector_slam_launch_BINARY_DIR:STATIC=/home/catkin_ws/build/RPLidar_Hector_SLAM/hector_slam/hector_slam_launch
+
+//Value Computed by CMake
+hector_slam_launch_SOURCE_DIR:STATIC=/home/catkin_ws/src/RPLidar_Hector_SLAM/hector_slam/hector_slam_launch
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
 
@@ -405,6 +446,9 @@ odom_BINARY_DIR:STATIC=/home/catkin_ws/build/odom
 //Value Computed by CMake
 odom_SOURCE_DIR:STATIC=/home/catkin_ws/src/odom
 
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
+
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
 
@@ -422,6 +466,12 @@ rosgraph_DIR:PATH=/opt/ros/melodic/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/melodic/share/rosgraph_msgs/cmake
+
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/melodic/share/roslib/cmake
+
+//The directory containing a CMake configuration file for rospack.
+rospack_DIR:PATH=/opt/ros/melodic/share/rospack/cmake
 
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/melodic/share/rospy/cmake

@@ -5,43 +5,34 @@ import math
 from sensor_msgs.msg import LaserScan
 from networktables import NetworkTables
 
+prev_times = []
 
 def callback(data):
     cart_pts = []
-    grid = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
     ranges = data.ranges
     min = data.angle_min
     max = data.angle_max
     ang_incr = data.angle_increment
-    for i in ranges:
-        x = (i*math.cos(min))*3.28084
-        y = (i*math.sin(min))*3.28084
-        min += ang_incr
-        if (y <= 3.75 and y >= -3.75) and (x <= 7.5 and x >= 0) and ((min >= (3*math.pi)/2) or (min <= math.pi/2)):
-            x *= 2
-            x = int(round(x))
-            y *= 2
-            y = int(round(y)) + 8
-            grid[x][y] = 1
-    byte = []
-    bit = '0b0'
-    boolGrid = []
-    grid[0][8] = 0;
-    for i in grid:
-        print(i)
-        for j in i:
-            boolGrid.append(j == 1)
-    g.setBooleanArray(boolGrid)
-    print("\n")
+
+    for i, r in enumerate(ranges):
+        current_angle = 180 + int((i * ang_incr + min) * 180.0 / 3.141592)
+        if not (((current_angle % 45) == 0) or ((current_angle % 30) == 0)):
+           continue
+        if ((r < 0.5) or (r > 8.5)):
+           continue #r = 0
+        print(str(current_angle), "   :   ", r)
+        sd.putNumber(str(current_angle), round(r,4))
+
+    sd.putNumber(str(min), 389)
 def listener():
     rospy.init_node('ranges', anonymous=True)
     rospy.Subscriber('scan', LaserScan, callback)
     NetworkTables.initialize(server="10.0.20.2")
+    global sd
+    sd = NetworkTables.getTable('SmartDashboard')
+
+    #sd.putNumber('someNumber', 9)
+
     odom_table = NetworkTables.getTable("ODOMETRY")
     global g
     g = odom_table.getEntry("grid")
